@@ -12,7 +12,7 @@ export default function Hero() {
     <section id="home" className="hero">
       <div className="container hero-inner" ref={ref}>
 
-  <div className="doctor-name reveal">
+  <div className="doctor-name">
     <strong>Dr. Keshav Jha</strong>
     <span>Dental & Implant Surgeon</span>
   </div>
