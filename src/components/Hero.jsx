@@ -14,7 +14,7 @@ export default function Hero() {
 
     {/* Doctor name — add ONLY this */}
     <div className="doctor-name reveal">
-      <strong>Dr. Keshav Jha</strong>
+      <strong>Dr. Keshav </strong>
       <span>Dental & Implant Surgeon</span>
     </div>
 
