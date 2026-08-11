@@ -11,7 +11,13 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero-inner" ref={ref}>
-        <div className="hero-copy reveal">
+
+  <div className="doctor-name reveal">
+    <strong>Dr. Keshav Jha</strong>
+    <span>Dental & Implant Surgeon</span>
+  </div>
+
+  <div className="hero-copy reveal">
           <span className="eyebrow">
             <ToothMark className="eyebrow-tooth" />
             Trusted Dental Care in Raj Nagar Extension
