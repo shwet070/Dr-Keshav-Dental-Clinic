@@ -245,3 +245,7 @@
   font-size: 14px;
   color: #b8c7d9;
 }
+/* Keep doctor name above the original hero layout */
+.doctor-name {
+  grid-column: 1 / -1;
+}
