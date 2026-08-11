@@ -1,0 +1,72 @@
+.testimonials {
+  background: var(--white);
+  padding: 100px 0;
+}
+
+.testi-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.testi-rating .stars {
+  display: flex;
+  gap: 2px;
+  color: var(--turquoise-500);
+}
+
+.testi-rating p {
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.testi-rating strong {
+  color: var(--navy-900);
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.testi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+}
+
+.testi-quote-icon {
+  color: var(--turquoise-500);
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+
+.testi-card p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--navy-900);
+}
+
+@media (max-width: 860px) {
+  .testi-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 70px 0;
+  }
+
+  .testi-card {
+    padding: 26px 22px;
+  }
+}

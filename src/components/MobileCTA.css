@@ -1,0 +1,47 @@
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    box-shadow: 0 -6px 24px rgba(10, 26, 43, 0.1);
+  }
+
+  .mobile-cta-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 8px 4px;
+    border-radius: 12px;
+    color: var(--navy-900);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11.5px;
+    min-height: 48px;
+  }
+
+  .mobile-cta-item svg {
+    color: var(--turquoise-500);
+  }
+
+  .mobile-cta-primary {
+    background: var(--navy-900);
+    color: var(--white);
+  }
+
+  .mobile-cta-primary svg {
+    color: var(--turquoise-400);
+  }
+}
