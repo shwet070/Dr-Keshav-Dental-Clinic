@@ -191,3 +191,39 @@
     max-width: 88%;
   }
 }
+/* Doctor name above hero content */
+.doctor-name {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.doctor-name strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.doctor-name span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .doctor-name {
+    margin-bottom: 5px;
+  }
+
+  .doctor-name strong {
+    font-size: 21px;
+  }
+
+  .doctor-name span {
+    font-size: 13px;
+  }
+}
