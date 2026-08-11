@@ -226,3 +226,22 @@
     font-size: 13px;
   }
 }
+.doctor-name {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.doctor-name strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.doctor-name span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #b8c7d9;
+}

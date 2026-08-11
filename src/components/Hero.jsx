@@ -10,12 +10,15 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      <div className="container hero-inner" ref={ref}>
+    <div className="container hero-inner" ref={ref}>
 
-  <div className="doctor-name">
-    <strong>Dr. Keshav Jha</strong>
-    <span>Dental & Implant Surgeon</span>
-  </div>
+    {/* Doctor name — add ONLY this */}
+    <div className="doctor-name reveal">
+      <strong>Dr. Keshav Jha</strong>
+      <span>Dental & Implant Surgeon</span>
+    </div>
+
+    {/* Everything below this stays exactly as it was */}
 
   <div className="hero-copy reveal">
           <span className="eyebrow">
