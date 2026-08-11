@@ -1,7 +1,22 @@
 .hero {
-  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
-  padding: 76px 0 110px;
-  overflow: hidden;
+    position: relative;
+    background-image: url('../assets/Clinic-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 47, 78, 0.55);
+  z-index: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-inner {
