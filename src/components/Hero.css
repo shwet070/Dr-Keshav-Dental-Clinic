@@ -193,24 +193,23 @@
 }
 /* Doctor name above hero content */
 .doctor-name {
-  grid-column: 1 / -1;
   text-align: center;
-  margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 24px;
 }
 
 .doctor-name strong {
   display: block;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .doctor-name span {
   display: block;
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.75;
+  margin-top: 6px;
+  font-size: 15px;
+  color: #b8c7d9;
 }
 
 /* Mobile */
