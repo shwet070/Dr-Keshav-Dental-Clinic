@@ -120,3 +120,20 @@
     grid-template-columns: 1fr;
   }
 }
+.appointment-success {
+  text-align: center;
+  padding: 60px 30px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+.appointment-success h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.appointment-success p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}

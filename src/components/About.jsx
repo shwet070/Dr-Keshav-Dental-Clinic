@@ -1,5 +1,5 @@
 import { CheckCircle } from 'lucide-react';
-import doctorCabin from '../assets/doctor-cabin.jpg';
+import doctorCabin from '../assets/doctor-cabin-2.jpg';
 import useReveal from '../hooks/useReveal';
 import './About.css';
 

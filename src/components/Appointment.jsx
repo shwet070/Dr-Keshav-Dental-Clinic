@@ -13,6 +13,8 @@ const initialForm = {
   treatment: '',
   message: '',
 };
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbybpjo9uuAEakg2IE1vU1HJ4vTRGAOhoO7Ys77Jz_LaK6h7Lk6bajds1huPsmSrQzIF/exec";
 
 export default function Appointment() {
   const ref = useReveal();
@@ -24,27 +26,34 @@ export default function Appointment() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const buildWhatsAppMessage = () => {
-    const lines = [
-      `Appointment request — ${clinic.name}`,
-      `Name: ${form.name}`,
-      `Phone: ${form.phone}`,
-      form.email ? `Email: ${form.email}` : null,
-      form.date ? `Preferred date: ${form.date}` : null,
-      form.time ? `Preferred time: ${form.time}` : null,
-      form.treatment ? `Treatment/Concern: ${form.treatment}` : null,
-      form.message ? `Message: ${form.message}` : null,
-    ].filter(Boolean);
-    return encodeURIComponent(lines.join('\n'));
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: new URLSearchParams({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        date: form.date,
+        time: form.time,
+        treatment: form.treatment,
+        message: form.message,
+      }),
+    });
+
     setSent(true);
-    const url = `https://wa.me/${clinic.whatsapp.replace('+', '')}?text=${buildWhatsAppMessage()}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
 
+    setForm(initialForm);
+
+  } catch (error) {
+    console.error("Google Sheets error:", error);
+    alert("Unable to submit appointment. Please call the clinic.");
+  }
+};
   return (
     <section id="appointment" className="appointment">
       <div className="container appointment-inner" ref={ref}>
@@ -71,6 +80,13 @@ export default function Appointment() {
             </a>
           </div>
         </div>
+        {sent ? (
+  <div className="appointment-success">
+    <h2>Thank You!</h2>
+    <p>Your appointment request has been submitted successfully.</p>
+    <p>Our clinic will contact you shortly to confirm your appointment.</p>
+  </div>
+) : (
 
         <form className="appointment-form reveal" onSubmit={handleSubmit}>
           <div className="form-row">
@@ -163,6 +179,7 @@ export default function Appointment() {
             </p>
           )}
         </form>
+)}
       </div>
     </section>
   );

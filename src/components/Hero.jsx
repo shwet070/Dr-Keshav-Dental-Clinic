@@ -1,5 +1,5 @@
 import { Phone, Star, ShieldCheck } from 'lucide-react';
-import treatmentRoom from '../assets/treatment-room.jpg';
+import treatmentRoom from '../assets/treatment-room-2.jpg';
 import { clinic } from '../data/clinic';
 import ToothMark from './ToothMark';
 import useReveal from '../hooks/useReveal';
