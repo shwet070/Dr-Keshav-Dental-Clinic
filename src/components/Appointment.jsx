@@ -30,29 +30,26 @@ export default function Appointment() {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  try {
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: new URLSearchParams({
-        name: form.name,
-        phone: form.phone,
-        email: form.email,
-        date: form.date,
-        time: form.time,
-        treatment: form.treatment,
-        message: form.message,
-      }),
-    });
+  // Show success message immediately
+  setSent(true);
+  setForm(initialForm);
 
-    setSent(true);
-
-    setForm(initialForm);
-
-  } catch (error) {
+  // Send lead to Google Sheets in the background
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams({
+      name: form.name,
+      phone: form.phone,
+      email: form.email,
+      date: form.date,
+      time: form.time,
+      treatment: form.treatment,
+      message: form.message,
+    }),
+  }).catch((error) => {
     console.error("Google Sheets error:", error);
-    alert("Unable to submit appointment. Please call the clinic.");
-  }
+  });
 };
   return (
     <section id="appointment" className="appointment">
